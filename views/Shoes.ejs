@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes</title>
+</head>
+
+<body>
+
+    <h1>Your Shoes</h1>
+
+    <% if (locals.items) { %>
+    <ol>
+        <% items.forEach(item => { %>
+            <li>
+                <p><%= item.Name %></p>
+                <p><%= item.description %></p>
+                <p><%= item.category %></p>
+                <p><%= item.price %></p>
+                <p><%= item.stock %></p>
+                <p><a href="<%= item.url %>">Visit website</a></p>
+
+                <button name="edit"><a href="/category/items/edit-item/<%=item._id %>">edit item </a> </button>
+                <button name="delete"><a href="/category/items/delete-item/<%=item._id %>"> delete item</a> </button>
+
+            </li>
+        <% }) %>
+    </ol>
+
+    <% } %>
+
+    <button type="button" class="btn btn-primary" name="add-new"><a href="/category/items/add-new-item">Add-new-item</a></button>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
